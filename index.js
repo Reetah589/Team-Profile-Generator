@@ -1,5 +1,10 @@
-const Employee = [];
-//const manager = equire
+var inquirer = require('inquirer')
+const Employee = require("./lib/Employee");
+const Engineer = require("./lib/Engineer");
+const Manager = require("./lib/Manager");
+const Intern = require("./lib/Intern");
+
+const fs = require("fs")
 
 //set up an array of questions 
 var questions = [
@@ -39,3 +44,19 @@ var questions = [
     type: "input"
 },    
 ]
+
+function init (){
+    inquirer
+    .prompt(questions)
+    .then(data => {
+      console.log(data)
+      console.log(data.title)
+      console.log(data.description)
+      console.log(data.installation)
+      console.log(data.usage)
+      console.log(data.contributing)
+      console.log(data.tests)
+})
+
+init();
+
