@@ -1,4 +1,4 @@
-const Employee = require('../lib/Employee.js');
+const Engineer = require('../lib/Engineer.js');
 
 // adding new employee
 test('create a new employee name', () => {
@@ -14,5 +14,4 @@ test('return new employee', () => {
 
     expect(employee.getRole()).toBe ('Employee');
 });
-
 
