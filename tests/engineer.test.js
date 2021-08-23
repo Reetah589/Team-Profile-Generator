@@ -1,17 +1,18 @@
 const Engineer = require('../lib/Engineer.js');
 
-// adding new employee
-test('create a new employee name', () => {
-    const employee = new Employee ('Jared', 1, 'jared@fakemail.com');
+// adding new engineer 
+test('create a new engineer name', () => {
+    const engineer = new Engineer ('Alec', 2, 'alec@fakemail.com', 'ibalec');
   
-    expect(employee.name).toBe('Jared');
-    expect(employee.id).toBe(1);
-    expect(employee.email).toBe('jared@fakemail.com')
+    expect(engineer.name).toBe('Alec');
+    expect(engineer.id).toBe(2);
+    expect(engineer.email).toBe('alec@fakemail.com')
+    expect(engineer.github).toBe('ibalec')
 });
 
-test('return new employee', () => {
-    const employee = new Employee ('Jared', 1, 'jared@fakemail.com');
+test('role is equal to engineer', () => {
+    const engineer = new Engineer ('Alec', 2, 'alec@fakemail.com', 'ibalec');
 
-    expect(employee.getRole()).toBe ('Employee');
+    expect(engineer.getRole()).toBe ('Engineer');
 });
 
