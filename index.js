@@ -9,7 +9,7 @@ const fs = require("fs")
 //set up an array of questions 
 var questions = [
 {
-    name: "employee name",
+    name: "employeeName",
     message: "Please enter the team member's name",
     type: "input"
 },
@@ -42,8 +42,8 @@ var questions = [
     name: "engineer",
     message: "If Engineer, please enter the GitHub username",
     type: "input"
-},    
-]
+}  
+];
 
 function init (){
     inquirer
@@ -56,7 +56,20 @@ function init (){
       console.log(data.usage)
       console.log(data.contributing)
       console.log(data.tests)
-})
+      const html = '<html><body><div style="border-size: 2px; border-color: blue">'
+      + 'Name: ' + data.employeeName + '<br />'
+      + 'email: ' + data.email + '<br />'
+      + 'id: ' + data.id + '<br />'
+      + 'lists: ' + data.lists + '<br />'
+      + 'School: ' + data.intern + '<br />'
+      + 'Office: ' + data.manager + '<br />'
+      + 'Github Username: ' + data.engineer + '<br />'
+      +'</div></body></html>';
 
+      fs.writeFile('dist/team.html', html, function (err) {
+        if (err) throw err;
+        console.log('Saved!');
+      });
+    })
+}    
 init();
-
